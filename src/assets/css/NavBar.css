@@ -1,0 +1,29 @@
+.navbar {
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 350px; 
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  color: #69f;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.navbar li a:hover {
+  text-decoration: underline;
+}
