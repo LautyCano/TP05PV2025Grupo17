@@ -1,12 +1,21 @@
-# React + Vite
+# TP05PV2025Grupo17 - Gestión de Alumnos con React Router
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene la entrega del Trabajo Práctico N°5 (TP5) para la cátedra de Programación Visual 2025. El objetivo principal de este TP es implementar la navegación y el enrutamiento en una aplicación React utilizando la librería **React Router DOM**, para gestionar información de alumnos.
 
-Currently, two official plugins are available:
+## Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación permite la gestión básica de alumnos, incluyendo la visualización de una lista de alumnos, la adición de nuevos alumnos, la visualización de detalles individuales, la edición de información existente y, en un futuro, la gestión de "items" (posiblemente relacionados con los alumnos, como materias, calificaciones, etc.).
 
-## Expanding the ESLint configuration
+Se ha hecho énfasis en el uso de rutas para manejar las diferentes vistas de la aplicación, proporcionando una experiencia de usuario fluida y una estructura de navegación clara.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologías Utilizadas
+
+- **React:** Biblioteca de JavaScript para construir interfaces de usuario.
+- **Vite:** Herramienta de construcción rápida para proyectos web modernos.
+- **React Router DOM:** Librería para gestionar el enrutamiento declarativo en aplicaciones React.
+- **JavaScript (ES6+)**
+- **CSS:** Para estilizar la interfaz.
+
+## Estructura del Proyecto
+
+El proyecto sigue una estructura de carpetas modular para organizar los componentes, servicios y vistas de la aplicación:

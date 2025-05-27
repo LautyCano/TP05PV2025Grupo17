@@ -1,0 +1,56 @@
+.alumno-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.alumno-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; 
+}
+
+.alumno-form div {
+  margin-bottom: 15px;
+}
+
+.alumno-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; 
+}
+
+.alumno-form input {
+  width: calc(100% - 12px);
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #333; 
+  background-color: white; 
+}
+
+.alumno-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.alumno-form button:hover {
+  background-color: #0056b3;
+}
+
+.alumno-form input:required + label::after {
+  content: " *";
+  color: red;
+}
