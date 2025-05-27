@@ -1,6 +1,6 @@
-import '../assets/css/NavBar.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'; 
+import { Link } from 'react-router-dom'; 
+import '../css/NavBar.css';
 
 const NavBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavBar = () => {
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/alumnos">Lista de Alumnos</Link></li>
         <li><Link to="/alumnos/nuevo">Nuevo Alumno</Link></li>
-        <li><Link to="/acerca">Acerca de</Link></li>
+        {/* <li><Link to="/acerca">Acerca de</Link></li> */}
       </ul>
     </nav>
   );
