@@ -1,35 +1,44 @@
-import React from 'react';
-import { useEffect, useState } from "react"; 
-import { getUsers, initializeUsers } from "../services/alumnoService"; 
-import "../css/List.css"; 
+import React, { useEffect, useState } from "react";
+import { getUsers, initializeUsers } from "../services/alumnoService";
+import AlumnoForm  from "./Form";
+import AlumnoItem from "./Items";
+import "../css/List.css";
 
 export const AlumnoList = () => {
   const [alumnos, setAlumnos] = useState([]);
 
   useEffect(() => {
-    //Asegura de que los usuarios iniciales existan en localStorage
     initializeUsers();
-
-    //Obtiene la lista COMPLETA de alumnos después de la inicialización
     const fetchedAlumnos = getUsers();
-    console.log("Alumnos cargados:", fetchedAlumnos); 
-    
     setAlumnos(fetchedAlumnos);
-  }, []); // El array vacío asegura que se ejecute solo una vez al montar el componente.
+  }, []);
+
+  const handleAddAlumno = () => {
+    const updatedAlumnos = getUsers();
+    setAlumnos(updatedAlumnos);
+  };
+
+  const handleDeleteAlumno = (id) => {
+    const updatedAlumnos = alumnos.filter((alumno) => alumno.id !== id);
+    localStorage.setItem("alumnos", JSON.stringify(updatedAlumnos));
+    setAlumnos(updatedAlumnos);
+  };
 
   return (
     <div className="alumno-list">
       <h2>Lista de Alumnos</h2>
+      <AlumnoForm onAddAlumno={handleAddAlumno} />
+
       {alumnos.length > 0 ? (
-        <ul>
+        <div className="alumnos-container">
           {alumnos.map((alumno) => (
-            <li key={alumno.id} className="alumno-item">
-              Legajo: {alumno.lu}, Nombre: {alumno.nombre}, Apellido: {alumno.apellido}, Curso: {alumno.curso}
-              <br />
-              Email: {alumno.email}, Domicilio: {alumno.domicilio}, Teléfono: {alumno.telefono}
-            </li>
+            <AlumnoItem
+              key={alumno.id}
+              alumno={alumno}
+              onDelete={handleDeleteAlumno}
+            />
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No hay alumnos disponibles.</p>
       )}

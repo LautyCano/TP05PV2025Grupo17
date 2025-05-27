@@ -1,21 +1,16 @@
-import React from 'react';
-import NavBar from './assets/components/NavBar';
-import { router } from './Routes'; 
-import { RouterProvider } from 'react-router-dom'; 
-import './assets/css/App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import NavBar from "./assets/components/NavBar";
+import AppRoutes from "./Routes";
 
 function App() {
- 
-return (
-    <div className="App">
-      <RouterProvider router={router}>
-        <NavBar /> 
-        <div className="main-content">
-          {/* Aquí se renderizará el contenido de las rutas */}
-        </div>
-      </RouterProvider>
-    </div>
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
 export default App;
+

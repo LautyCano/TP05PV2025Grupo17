@@ -3,14 +3,14 @@
   padding: 15px;
   border: 1px solid #eee;
   border-radius: 5px;
-  background-color: white; /* Asegúrate de que el fondo del contenedor general sea blanco */
+  background-color: white; 
 }
 
 .alumno-list h2 {
   margin-top: 0;
   margin-bottom: 15px;
   text-align: center;
-  color: #333; /* Color oscuro para el título */
+  color: #333; 
 }
 
 .alumno-list ul {
@@ -19,12 +19,12 @@
 }
 
 .alumno-item {
-  background-color: #f9f9f9; /* Fondo claro para cada item */
+  background-color: #f9f9f9; 
   border: 1px solid #ddd;
   border-radius: 3px;
   margin-bottom: 10px;
   padding: 10px;
-  color: #333; /* ¡Asegura un color de texto oscuro para los elementos de la lista! */
+  color: #333; 
 }
 
 .alumno-item strong {
