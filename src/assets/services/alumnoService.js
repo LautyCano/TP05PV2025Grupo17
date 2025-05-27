@@ -8,7 +8,7 @@ export const getUsers = () => {
 // Función para guardar un nuevo alumno (añadiéndolo a la lista existente)
 export const saveUser = (newAlumno) => {
   const alumnos = getUsers(); // Obtener la lista actual de alumnos
-  // Asignar un ID único simple para la prop 'key'. Date.now() es aceptable para ejemplos.
+  
   const alumnoWithId = { ...newAlumno, id: Date.now().toString() };
   alumnos.push(alumnoWithId); // Añadir el nuevoalumno a la lista
   localStorage.setItem(ALUMNOS_STORAGE_KEY, JSON.stringify(alumnos)); 
@@ -26,5 +26,21 @@ export const initializeUsers = () => {
     ];
     localStorage.setItem(ALUMNOS_STORAGE_KEY, JSON.stringify(initialAlumnos));
     console.log('Alumnos precargados inicializados.');
+  }
+};
+// Función para eliminar un alumno por su ID
+export const deleteUser = (id) => {
+  const alumnos = getUsers(); // Obtener todos los alumnos
+  const updatedAlumnos = alumnos.filter((alumno) => alumno.id !== id); 
+  localStorage.setItem(ALUMNOS_STORAGE_KEY, JSON.stringify(updatedAlumnos)); 
+};
+//Funcion para actualizar alumno
+export const updateUser = (updatedAlumno) => {
+  const alumnos = getUsers();
+  const index = alumnos.findIndex((a) => a.id === updatedAlumno.id);
+
+  if (index !== -1) {
+    alumnos[index] = updatedAlumno;
+    localStorage.setItem("alumnos_data", JSON.stringify(alumnos));
   }
 };
