@@ -73,5 +73,3 @@ El éxito de este proyecto fue el resultado de un esfuerzo colaborativo y una cl
 
 - **Muro Lautaro**
   - Aplicación de **estilos específicos para componentes de listas y botones** (reutilizables).
-
----
