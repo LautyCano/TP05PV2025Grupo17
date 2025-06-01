@@ -1,14 +1,17 @@
-import React from 'react'; 
-import { Link } from 'react-router-dom'; 
+import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Inicio</h1>
-      <p>Bienvenido al sistema de gestión de alumnos.</p>
-      <Link to="/alumnos"> Ir a la lista de alumnos</Link>
-      <Link to="/alumnos/nuevo"> Ir a agregar un nuevo alumno</Link>
-    </div>
+    <Container 
+      className="d-flex flex-column justify-content-center align-items-center"
+      style={{ minHeight: '100vh' }}
+    >
+      <h1 className="display-4 text-center">Inicio</h1>
+      <p className="lead text-center">
+        Bienvenido al sistema de gestión de alumnos.
+      </p>
+    </Container>
   );
 };
 

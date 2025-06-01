@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { getUsers, initializeUsers } from "../services/alumnoService";
-import AlumnoForm  from "./Form";
+import { getUsers } from "../services/alumnoService";
 import AlumnoItem from "./Items";
-import "../css/List.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 export const AlumnoList = () => {
   const [alumnos, setAlumnos] = useState([]);
 
   useEffect(() => {
-    initializeUsers();
+
     const fetchedAlumnos = getUsers();
     setAlumnos(fetchedAlumnos);
   }, []);
 
-  const handleAddAlumno = () => {
-    const updatedAlumnos = getUsers();
-    setAlumnos(updatedAlumnos);
-  };
-
+  
   const handleDeleteAlumno = (id) => {
     const updatedAlumnos = alumnos.filter((alumno) => alumno.id !== id);
     localStorage.setItem("alumnos", JSON.stringify(updatedAlumnos));
@@ -25,23 +20,20 @@ export const AlumnoList = () => {
   };
 
   return (
-    <div className="alumno-list">
-      <h2>Lista de Alumnos</h2>
-      <AlumnoForm onAddAlumno={handleAddAlumno} />
+    <Container className="mt-4">
+      <h2 className="text-center mb-4">Lista de Alumnos</h2>
 
       {alumnos.length > 0 ? (
-        <div className="alumnos-container">
+        <Row>
           {alumnos.map((alumno) => (
-            <AlumnoItem
-              key={alumno.id}
-              alumno={alumno}
-              onDelete={handleDeleteAlumno}
-            />
+            <Col md={6} lg={4} className="mb-4" key={alumno.id}>
+              <AlumnoItem alumno={alumno} onDelete={handleDeleteAlumno} />
+            </Col>
           ))}
-        </div>
+        </Row>
       ) : (
-        <p>No hay alumnos disponibles.</p>
+        <p className="text-center">No hay alumnos disponibles.</p>
       )}
-    </div>
+    </Container>
   );
 };
