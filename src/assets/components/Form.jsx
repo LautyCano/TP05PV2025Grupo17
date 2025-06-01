@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { saveUser, updateUser } from "../services/alumnoService";
-import "../css/Form.css";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 
 const AlumnoForm = ({ alumno, onSubmit }) => {
   const [lu, setLu] = useState("");
@@ -11,8 +11,9 @@ const AlumnoForm = ({ alumno, onSubmit }) => {
   const [domicilio, setDomicilio] = useState("");
   const [telefono, setTelefono] = useState("");
 
-  
+
   useEffect(() => {
+
     if (alumno) {
       setLu(alumno.lu || "");
       setNombre(alumno.nombre || "");
@@ -39,13 +40,13 @@ const AlumnoForm = ({ alumno, onSubmit }) => {
     };
 
     if (alumno) {
-      updateUser(alumnoData); 
+      updateUser(alumnoData);
     } else {
-      saveUser(alumnoData); 
+      saveUser(alumnoData);
     }
 
     if (onSubmit) {
-      onSubmit(alumnoData); 
+      onSubmit(alumnoData);
     }
 
     if (!alumno) {
@@ -61,19 +62,112 @@ const AlumnoForm = ({ alumno, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="alumno-form">
-      <h2>{alumno ? "Editar Alumno" : "Agregar Alumno"}</h2>
-      <div>
-        <input type="text" placeholder="Legajo Único" value={lu} onChange={(e) => setLu(e.target.value)} required />
-        <input type="text" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
-        <input type="text" placeholder="Apellido" value={apellido} onChange={(e) => setApellido(e.target.value)} required />
-        <input type="text" placeholder="Curso" value={curso} onChange={(e) => setCurso(e.target.value)} required />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="text" placeholder="Domicilio" value={domicilio} onChange={(e) => setDomicilio(e.target.value)} required />
-        <input type="text" placeholder="Teléfono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
-      </div>
-      <button type="submit">{alumno ? "Actualizar Alumno" : "Agregar Alumno"}</button>
-    </form>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <Card className="p-4 shadow" style={{ width: "100%", maxWidth: "800px" }}>
+        <Card.Body>
+          <h4 className="mb-4 text-center">
+            {alumno ? "Editar Alumno" : "Agregar Alumno"}
+          </h4>
+          <Form onSubmit={handleSubmit}>
+            <Row className="mb-3">
+              <Col md={6}>
+                <Form.Group controlId="formLu">
+                  <Form.Label>Legajo Único</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={lu}
+                    onChange={(e) => setLu(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={6}>
+                <Form.Group controlId="formNombre">
+                  <Form.Label>Nombre</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={6}>
+                <Form.Group controlId="formApellido">
+                  <Form.Label>Apellido</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={apellido}
+                    onChange={(e) => setApellido(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={6}>
+                <Form.Group controlId="formCurso">
+                  <Form.Label>Curso</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={curso}
+                    onChange={(e) => setCurso(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Row className="mb-3">
+              <Col md={6}>
+                <Form.Group controlId="formEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={6}>
+                <Form.Group controlId="formTelefono">
+                  <Form.Label>Teléfono</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Form.Group className="mb-3" controlId="formDomicilio">
+              <Form.Label>Domicilio</Form.Label>
+              <Form.Control
+                type="text"
+                value={domicilio}
+                onChange={(e) => setDomicilio(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <div className="text-center">
+              <Button variant="primary" type="submit">
+                {alumno ? "Actualizar Alumno" : "Agregar Alumno"}
+              </Button>
+            </div>
+          </Form>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 
