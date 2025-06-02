@@ -1,0 +1,40 @@
+.ver-alumno-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.ver-alumno-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.ver-alumno-container p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+
+.ver-alumno-container p strong {
+  display: inline-block;
+  width: 100px; 
+  font-weight: 600;
+  color: #555;
+}
+
+
+.ver-alumno-container p:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
