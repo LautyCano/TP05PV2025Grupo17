@@ -7,10 +7,11 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <AppRoutes />
+      <div style={{paddingTop: "70"}}>
+        <AppRoutes />
+      </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-
