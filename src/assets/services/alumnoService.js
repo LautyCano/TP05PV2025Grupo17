@@ -44,3 +44,4 @@ export const updateUser = (updatedAlumno) => {
     localStorage.setItem("alumnos_data", JSON.stringify(alumnos));
   }
 };
+

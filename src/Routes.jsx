@@ -5,6 +5,7 @@ import { AlumnoList } from "./assets/components/List";
 import AlumnoForm from "./assets/components/Form";
 import VerAlumno from "./assets/views/VerAlumno";
 import EditarAlumno from "./assets/views/EditarAlumno";
+import Acerca from "./assets/views/Acerca";
 
 export default function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
       <Route path="/alumnos/nuevo" element={<AlumnoForm />} />
       <Route path="/alumnos/:id" element={<VerAlumno />} />
       <Route path="/alumnos/:id/editar" element={<EditarAlumno />} />
+      <Route path="/alumnos/acerca" element={<Acerca />} />
     </Routes>
   );
 }

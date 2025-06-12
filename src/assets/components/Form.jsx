@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
+import { useState, useEffect } from "react";
 import { saveUser, updateUser } from "../services/alumnoService";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 
