@@ -163,6 +163,7 @@ const AlumnoForm = ({ alumno, onSubmit }) => {
             <div className="text-center">
               <Button variant="primary" type="submit">
                 {alumno ? "Actualizar Alumno" : "Agregar Alumno"}
+                
               </Button>
             </div>
           </Form>

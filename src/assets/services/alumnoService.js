@@ -21,7 +21,7 @@ export const initializeUsers = () => {
     const initialAlumnos = [
       { id: '1', lu: "12345678", nombre: "Juan", apellido: "Pérez", curso: "Programación Visual", email: "juan.perez@example.com", domicilio: "Calle Falsa 123", telefono: "123456789" },
       { id: '2', lu: "87654321", nombre: "Ana", apellido: "García", curso: "Matemáticas", email: "ana.garcia@example.com", domicilio: "Avenida siempre Viva 742", telefono: "987654321" },
-      { id: '3', lu: "99887766", nombre: "Carlos", apellido: "López", curso: "Base de Datos", email: "carlos.l@example.com", domicilio: "Rioja 500", telefono: "1155443322" },
+      { id: '3', lu: "99887766", nombre: "Carlo", apellido: "López", curso: "Base de Datos", email: "carlos.l@example.com", domicilio: "Rioja 500", telefono: "1155443322" },
       { id: '4', lu: "11223344", nombre: "Sofía", apellido: "Fernández", curso: "Diseño Web", email: "sofia.f@example.com", domicilio: "Salta 1234", telefono: "1166778899" },
     ];
     localStorage.setItem(ALUMNOS_STORAGE_KEY, JSON.stringify(initialAlumnos));
