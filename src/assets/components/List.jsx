@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getUsers } from "../services/alumnoService";
+import React from 'react';
+import { useEffect, useState } from "react";
+import { getUsers, deleteUser} from "../services/alumnoService";
 import AlumnoItem from "./Items";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -14,9 +15,9 @@ export const AlumnoList = () => {
 
   
   const handleDeleteAlumno = (id) => {
-    const updatedAlumnos = alumnos.filter((alumno) => alumno.id !== id);
-    localStorage.setItem("alumnos", JSON.stringify(updatedAlumnos));
-    setAlumnos(updatedAlumnos);
+    deleteUser(id); //Elmina el alumno del servicio
+    const update = getUsers();// Vuelve a obtener la lista actualizada
+    setAlumnos(update);// Actualiza el estado con la nueva lista
   };
 
   return (
